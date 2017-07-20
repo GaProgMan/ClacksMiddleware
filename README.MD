@@ -19,3 +19,30 @@ See [Code of Conduct.md](Code-of-Conduct.md) for details.
 ### TL;DR
 
 See: The code in ClacksMiddlwareExample directory for a worked example
+
+### Long Form
+
+Install the latest version of the [NuGet package](https://www.nuget.org/packages/ClacksMiddlware/) into an ASP.NET Core application.
+
+Add a reference to the ClacksMiddleware namespace in the Startup class:
+
+    using ClacksMiddleware;
+
+Add the middleware to the ASP.NET Core middleware pipeline (the middleware class is called `GnuTerryPratchett`. Example:
+
+    public void Configure(IApplicationBuilder app, IHostingEnvironment env, ILoggerFactory loggerFactory)
+    {
+      loggerFactory.AddConsole(Configuration.GetSection("Logging"));
+      loggerFactory.AddDebug();
+
+      // Add our middlware before any others. Otherwise it may
+      // not affect the response for the incoming request
+      app.UseMiddleware<GnuTerryPratchett>();
+
+      app.UseMvc();
+    }
+
+Request a page within the application, and check the response headers:
+
+
+![secure headers shown in network tab](screenshots/headers-present.png "Relevant header is highlighted")
