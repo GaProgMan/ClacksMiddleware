@@ -12,7 +12,7 @@ ClacksMiddleware is an ASP.NET Core middlware class which will inject the GNU Te
 ## Code of Conduct
 ClacksMiddleware has a Code of Conduct which all contributors, maintainers and forkers must adhere to. When contributing, maintaining, forking or in any other way changing the code presented in this repository, all users must agree to this Code of Conduct.
 
-See [Code of Conduct.md](Code of Conduct.md) for details.
+See [Code-of-Conduct.md](Code of Conduct.md) for details.
 
 ## Usage
 
