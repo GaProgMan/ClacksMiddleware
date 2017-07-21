@@ -17,7 +17,7 @@ build_script:
   # output will be in ./src/bin/debug/netcoreapp1.1/publish
   - cmd: dotnet publish --configuration Production ./src/ClacksMiddleware.csproj
   # Create a NuGet packge for uploading
-  - cmd: dotnet pack ./src/ClacksMiddleware.csproj --configuration Production --output nupkgs /p:PackageVersion= %appveyor_build_version%
+  - cmd: dotnet pack ./src/ClacksMiddleware.csproj --configuration Production --output nupkgs
 after_build:
   # For once the build has completed
 artifacts:
