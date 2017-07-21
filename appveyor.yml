@@ -21,7 +21,7 @@ build_script:
 after_build:
   # For once the build has completed
 artifacts:
- - path: '\src\nupkgs'
+ - path: '\src\nupkgs\ClacksMiddlware.*.nupkg'
    name: NugetPackage
    type: Auto
 clone_depth: 1
