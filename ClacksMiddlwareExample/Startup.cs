@@ -5,6 +5,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Logging;
 using ClacksMiddleware;
+using ClacksMiddleware.Extensions;
 
 namespace ClacksMiddlwareExample
 {
@@ -37,7 +38,7 @@ namespace ClacksMiddlwareExample
 
             // Add our middlware before any others. Otherwise it may
             // not affect the response for the incoming request
-            app.UseMiddleware<GnuTerryPratchett>();
+            app.GnuTerryPratchett();
             
             app.UseStaticFiles();
             
