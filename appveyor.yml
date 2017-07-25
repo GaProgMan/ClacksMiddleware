@@ -24,8 +24,8 @@ artifacts:
  - path: '\src\nupkgs\ClacksMiddlware.*.nupkg'
    name: NugetPackage
    type: Auto
-   test_script:
-# tests in here
+test_script:
+  # tests in here
   - cmd: dotnet restore ./tests/tests.csproj --verbosity m
   - cmd: cd tests
   - cmd: dotnet test
