@@ -37,7 +37,7 @@ Add the middleware to the ASP.NET Core middleware pipeline (the middleware class
 
       // Add our middlware before any others. Otherwise it may
       // not affect the response for the incoming request
-      app.UseMiddleware<GnuTerryPratchett>();
+      app.GnuTerryPratchett();
 
       app.UseMvc();
     }

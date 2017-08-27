@@ -2,6 +2,7 @@
 using ClacksMiddleware.Extensions;
 using Microsoft.AspNetCore.Http;
 
+
 namespace ClacksMiddleware
 {
     /// <summary>
