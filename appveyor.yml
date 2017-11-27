@@ -3,6 +3,7 @@ image: Visual Studio 2017
 branches:
   only:
   - master
+clone_depth: 1
 init:
   # Good practise, because Windows line endings are different from Unix/Linux ones
   - cmd: git config --global core.autocrlf true
@@ -30,7 +31,6 @@ test_script:
   - cmd: cd tests
   - cmd: dotnet test
   - cmd: cd ..
-clone_depth: 1
 deploy:
  provider: Environment
  name: NuGet-90Days
