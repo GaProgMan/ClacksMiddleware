@@ -9,6 +9,12 @@ init:
   - cmd: git config --global core.autocrlf true
 install:
   # Install repo specific stuff here
+test_script:
+  # tests in here
+  - cmd: dotnet restore ./tests/tests.csproj --verbosity m
+  - cmd: cd tests
+  - cmd: dotnet test
+  - cmd: cd ..
 before_build:
   # Display .NET Core version
   - cmd: dotnet --version
@@ -16,21 +22,15 @@ before_build:
   - cmd: dotnet restore ./src/ClacksMiddleware.csproj --verbosity m
 build_script:
   # output will be in ./src/bin/debug/netcoreapp2.0/publish
-  - cmd: dotnet publish --configuration Production ./src/ClacksMiddleware.csproj
+  - cmd: dotnet publish --configuration Release --no-restore ./src/ClacksMiddleware.csproj
   # Create a NuGet packge for uploading
-  - cmd: dotnet pack ./src/ClacksMiddleware.csproj --configuration Production --output nupkgs
+  - cmd: dotnet pack ./src/ClacksMiddleware.csproj --configuration Release --no-build --no-restore --output nupkgs /p:NuspecFile=ClacksMiddleware.nuspec
 after_build:
   # For once the build has completed
 artifacts:
  - path: '\src\nupkgs\ClacksMiddlware.*.nupkg'
    name: NugetPackage
    type: Auto
-test_script:
-  # tests in here
-  - cmd: dotnet restore ./tests/tests.csproj --verbosity m
-  - cmd: cd tests
-  - cmd: dotnet test
-  - cmd: cd ..
 deploy:
  provider: Environment
  name: NuGet-90Days
