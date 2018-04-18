@@ -9,12 +9,6 @@ init:
   - cmd: git config --global core.autocrlf true
 install:
   # Install repo specific stuff here
-test_script:
-  # tests in here
-  - cmd: dotnet restore ./tests/tests.csproj --verbosity m
-  - cmd: cd tests
-  - cmd: dotnet test
-  - cmd: cd ..
 before_build:
   # Display .NET Core version
   - cmd: dotnet --version
@@ -31,6 +25,12 @@ artifacts:
  - path: '\src\nupkgs\ClacksMiddlware.*.nupkg'
    name: NugetPackage
    type: Auto
+test_script:
+  # tests in here
+  - cmd: dotnet restore ./tests/tests.csproj --verbosity m
+  - cmd: cd tests
+  - cmd: dotnet test
+  - cmd: cd ..
 deploy:
  provider: Environment
  name: NuGet-90Days
