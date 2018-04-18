@@ -33,6 +33,6 @@ test_script:
   - cmd: cd ..
 deploy:
  provider: Environment
- name: NuGet-90Days
+ name: AppVeyor-90Days
 on_finish :
   # any cleanup in here
