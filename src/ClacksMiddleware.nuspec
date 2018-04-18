@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<package xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <metadata xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd">
+    <id>ClacksMiddleware</id>
+    <version>2.0.1</version>
+    <authors>GaProgMan</authors>
+    <owners>GaProgMan</owners>
+    <licenseUrl>https://raw.githubusercontent.com/GaProgMan/ClacksMiddleware/master/LICENSE</licenseUrl>
+    <projectUrl>https://github.com/GaProgMan/ClacksMiddleware</projectUrl>
+    <iconUrl>https://raw.githubusercontent.com/GaProgMan/ClacksMiddleware/master/gnu-small.png</iconUrl>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>An ASP.NET Core middlware for injecting the GNU Terry Pratchett header into all HTTP responses</description>
+    <tags>GNU-pratchett terry-pratchett http-headers ASP-NET-Core Middleware</tags>
+    <dependencies>
+      <dependency id="Microsoft.AspNetCore.All" version="2.0.0" />
+    </dependencies>
+  </metadata>
+    <files>
+	  <file src=".\bin\Release\netstandard2.0\ClacksMiddleware.dll" target="lib/netstandard2.0" />
+    <file src=".\**\*.cs" target="src" />
+    <file src=".\**\*.csproj" target="src" />
+  </files>
+</package>
