@@ -22,7 +22,7 @@ build_script:
 after_build:
   # For once the build has completed
 artifacts:
- - path: '\src\nupkgs\ClacksMiddlware.*.nupkg'
+ - path: '\src\nupkgs\ClacksMiddleware.*.nupkg'
    name: NugetPackage
    type: Auto
 test_script:
